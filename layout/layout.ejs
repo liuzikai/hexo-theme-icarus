@@ -1,30 +1,42 @@
 <!DOCTYPE html>
-<html <%- has_config('language') ? ' lang="' + get_config('language').substring(0, 2) + '"' : '' %>>
+<html <%- has_config('language') ? ' lang="' + get_config('language').substring(0, 2) + '"' : '' %></html>>
 <head>
     <%- _partial('common/head') %>
 </head>
 <body class="is-<%= column_count() %>-column">
     <%- _partial('common/navbar') %>
-    <% function main_column_class() {
-        switch (column_count()) {
-            case 1:
-                return 'is-12';
-            case 2:
-                return 'is-8-tablet is-8-desktop is-8-widescreen';
-            case 3:
-                return 'is-8-tablet is-8-desktop is-6-widescreen'
-        }
-        return '';
-    } %>
-    <section class="section">
-        <div class="container">
-            <div class="columns">
-                <div class="column <%= main_column_class() %> has-order-2 column-main"><%- body %></div>
-                <%- _partial('common/widget', { position: 'left' }) %>
-                <%- _partial('common/widget', { position: 'right' }) %>
+    <% if (page.layout != 'error')  { %>
+        <!-- Normal Page -->
+        <% function main_column_class() {
+            switch (column_count()) {
+                case 1:
+                    return 'is-12';
+                case 2:
+                    return 'is-8-tablet is-8-desktop is-8-widescreen';
+                case 3:
+                    return 'is-8-tablet is-8-desktop is-6-widescreen'
+            }
+            return '';
+        } %>
+        <section class="section">
+            <div class="container">
+                <div class="columns">
+                    <div class="column <%= main_column_class() %> has-order-2 column-main"><%- body %></div>
+                    <%- _partial('common/widget', { position: 'left' }) %>
+                    <%- _partial('common/widget', { position: 'right' }) %>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    <% } else { %>
+        <!-- Error Page -->
+        <section class="section">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-12 has-order-2 column-main"><%- _partial('error') %></div>
+                </div>
+            </div>
+        </section>
+    <% } %>
     <%- _partial('common/footer') %>
     <%- _partial('common/scripts') %>
 
