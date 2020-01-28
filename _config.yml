@@ -153,9 +153,9 @@ widgets:
             # Facebook:
             #     icon: fab fa-facebook
             #     url: ''
-            # Twitter:
-            #     icon: fab fa-twitter
-            #     url: ''
+            Twitter:
+                icon: fab fa-twitter
+                url: 'https://twitter.com/liu_zikai'
             # Dribbble:
             #     icon: fab fa-dribbble
             #     url: ''
@@ -167,15 +167,15 @@ widgets:
         type: toc
         # Where should the widget be placed, left or right
         position: left
-    # -
-    #     # Widget name
-    #     type: links
-    #     # Where should the widget be placed, left or right
-    #     position: left
-    #     # Links to be shown in the links widget
-    #     links:
-    #         Hexo: 'https://hexo.io'
-    #         PPOffice: 'https://github.com/ppoffice'
+    -
+        # Widget name
+        type: links
+        # Where should the widget be placed, left or right
+        position: left
+        # Links to be shown in the links widget
+        links:
+            提问的智慧: 'https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md'
+            My LaTeX Engine: 'https://www.galacticcontender.com/latex.php'
     -
         # Widget name
         type: category
@@ -220,17 +220,17 @@ plugins:
     # https://ppoffice.github.io/hexo-theme-icarus/Plugins/General/site-analytics-plugin/#Google-Analytics
     google-analytics:
         # Google Analytics tracking id
-        tracking_id: 
+        tracking_id: UA-157133856-1
     # Baidu Analytics plugin settings
     # https://ppoffice.github.io/hexo-theme-icarus/Plugins/General/site-analytics-plugin/#Baidu-Analytics
-    baidu-analytics:
-        # Baidu Analytics tracking id
-        tracking_id: 
+    # baidu-analytics:
+    #     # Baidu Analytics tracking id
+    #     tracking_id: 
     # Hotjar user feedback plugin
     # https://ppoffice.github.io/hexo-theme-icarus/Plugins/General/site-analytics-plugin/#Hotjar
-    hotjar:
-        # Hotjar site id
-        site_id: 
+    # hotjar:
+    #     # Hotjar site id
+    #     site_id: 
     # Show a loading progress bar at top of the page
     progressbar: true
     # BuSuanZi site/page view counter
