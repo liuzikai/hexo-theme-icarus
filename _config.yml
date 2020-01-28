@@ -245,6 +245,3 @@ providers:
     fontcdn: google
     # Name or URL of the webfont Icon CDN provider
     iconcdn: fontawesome
-
-jsonContent:
-    pages: false
