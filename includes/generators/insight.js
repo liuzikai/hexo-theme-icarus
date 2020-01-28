@@ -29,9 +29,12 @@ module.exports = function (hexo) {
                 link: url_for(tag.path)
             }
         }
+        function filterIgnore(post) {
+            return post.layout != 'error';
+        }
         const site = {
-            pages: locals.pages.map(postMapper),
-            posts: locals.posts.map(postMapper),
+            pages: locals.pages.filter(filterIgnore).map(postMapper),
+            posts: locals.posts.filter(filterIgnore).map(postMapper),
             tags: locals.tags.map(tagMapper),
             categories: locals.categories.map(tagMapper)
         };
