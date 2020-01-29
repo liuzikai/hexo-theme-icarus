@@ -30,7 +30,8 @@ module.exports = function (hexo) {
             }
         }
         function filterIgnore(post) {
-            return post.layout != 'error';
+            // return post.layout != 'error';
+            return true;
         }
         const site = {
             pages: locals.pages.filter(filterIgnore).map(postMapper),
