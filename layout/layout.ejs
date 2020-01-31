@@ -5,38 +5,35 @@
 </head>
 <body class="is-<%= column_count() %>-column">
     <%- _partial('common/navbar') %>
-    <% if (page.layout != 'error')  { %>
-        <!-- Normal Page -->
-        <% function main_column_class() {
-            switch (column_count()) {
-                case 1:
-                    return 'is-12';
-                case 2:
-                    return 'is-8-tablet is-8-desktop is-8-widescreen';
-                case 3:
-                    return 'is-8-tablet is-8-desktop is-6-widescreen'
-            }
-            return '';
-        } %>
-        <section class="section">
-            <div class="container">
-                <div class="columns">
-                    <div class="column <%= main_column_class() %> has-order-2 column-main"><%- body %></div>
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <% function main_column_class(count) {
+                    switch (count) {
+                        case 1:
+                            return 'is-12';
+                        case 2:
+                            return 'is-8-tablet is-8-desktop is-8-widescreen';
+                        case 3:
+                            return 'is-8-tablet is-8-desktop is-6-widescreen'
+                    }
+                    return '';
+                } %>
+                <% if (page.layout == 'error_page') { %>
+                    <!-- Error Page -->
+                    <div class="column is-12 has-order-2 column-main"><%- _partial('error') %></div>
+                <% } else if (page.layout == 'raw') { %>
+                    <!-- Raw Page -->
+                    <%- page.content %>
+                <% } else { %>
+                    <!-- Normal Page -->
+                    <div class="column <%= main_column_class(column_count()) %> has-order-2 column-main"><%- body %></div>
                     <%- _partial('common/widget', { position: 'left' }) %>
                     <%- _partial('common/widget', { position: 'right' }) %>
-                </div>
+                <% } %>
             </div>
-        </section>
-    <% } else { %>
-        <!-- Error Page -->
-        <section class="section">
-            <div class="container">
-                <div class="columns">
-                    <div class="column is-12 has-order-2 column-main"><%- _partial('error') %></div>
-                </div>
-            </div>
-        </section>
-    <% } %>
+        </div>
+    </section>
     <%- _partial('common/footer') %>
     <%- _partial('common/scripts') %>
 
