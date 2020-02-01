@@ -18,7 +18,7 @@ module.exports = function (hexo) {
         function postMapper(post) {
             return {
                 title: post.title,
-                text: minify(post.content),
+                text: post.summary ? post.summary : minify(post.content),
                 link: url_for(post.path)
             }
         }
@@ -30,8 +30,8 @@ module.exports = function (hexo) {
             }
         }
         function filterIgnore(post) {
-            // return post.layout != 'error';
-            return true;
+            return post.source.endsWith(".md") && !post.hide_in_search;
+            // return true;
         }
         const site = {
             pages: locals.pages.filter(filterIgnore).map(postMapper),

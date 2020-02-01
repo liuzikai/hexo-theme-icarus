@@ -31,7 +31,7 @@ navbar:
         Archives: /archives
         Categories: /categories
         Tags: /tags
-        About: /about
+        # About: /about
     # Navigation bar links to be shown on the right
     links:
         # Download on GitHub:
@@ -114,12 +114,12 @@ sidebar:
     left:
         # Whether the left sidebar is sticky when page scrolls
         # https://ppoffice.github.io/hexo-theme-icarus/Configuration/Theme/make-a-sidebar-sticky-when-page-scrolls/
-        sticky: false
+        sticky: true
     # right sidebar settings
     right:
         # Whether the right sidebar is sticky when page scrolls
         # https://ppoffice.github.io/hexo-theme-icarus/Configuration/Theme/make-a-sidebar-sticky-when-page-scrolls/
-        sticky: false
+        sticky: true
 # Sidebar widget settings
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Widgets/
 widgets:
@@ -164,11 +164,6 @@ widgets:
                 url: 'https://www.zhihu.com/people/liuzikai'
     -
         # Widget name
-        type: toc
-        # Where should the widget be placed, left or right
-        position: left
-    -
-        # Widget name
         type: links
         # Where should the widget be placed, left or right
         position: left
@@ -176,6 +171,7 @@ widgets:
         links:
             提问的智慧: 'https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md'
             My LaTeX Engine: 'https://www.galacticcontender.com/latex.php'
+            My Pixiv Collection: 'https://www.galacticcontender.com/pixiv_collection'
     -
         # Widget name
         type: category
@@ -191,14 +187,23 @@ widgets:
         type: recent_posts
         # Where should the widget be placed, left or right
         position: right
-    -
-        # Widget name
-        type: archive
-        # Where should the widget be placed, left or right
-        position: right
+        # Hide in post or page
+        hide_in_article: true
+    # -
+    #     # Widget name
+    #     type: archive
+    #     # Where should the widget be placed, left or right
+    #     position: right
     -
         # Widget name
         type: tag
+        # Where should the widget be placed, left or right
+        position: right
+        # Hide in post or page
+        hide_in_article: true
+    -
+        # Widget name
+        type: toc
         # Where should the widget be placed, left or right
         position: right
 # Other plugin settings
@@ -207,13 +212,13 @@ plugins:
     animejs: true
     # Enable the lightGallery and Justified Gallery plugins
     # https://ppoffice.github.io/hexo-theme-icarus/Plugins/General/gallery-plugin/
-    gallery: true
+    gallery: false
     # Enable the Outdated Browser plugin
     # http://outdatedbrowser.com/
     outdated-browser: true
     # Enable the MathJax plugin
     # https://ppoffice.github.io/hexo-theme-icarus/Plugins/General/mathjax-plugin/
-    mathjax: true
+    mathjax: false
     # Show the back to top button on mobile devices
     back-to-top: true
     # Google Analytics plugin settings
