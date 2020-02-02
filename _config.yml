@@ -32,6 +32,9 @@ navbar:
         Categories: /categories
         Tags: /tags
         # About: /about
+        My:
+            My Pixiv Collection: 'https://www.galacticcontender.com/pixiv_collection'
+            My LaTeX Engine: 'https://www.galacticcontender.com/latex.php'
     # Navigation bar links to be shown on the right
     links:
         # Download on GitHub:

@@ -99,7 +99,7 @@ img.thumbnail
     .navbar-menu
         flex-grow: 1
         flex-shrink: 0
-        overflow-x: auto
+        // overflow-x: auto
     .navbar-start
         justify-content: flex-start
         margin-right: auto
@@ -109,10 +109,12 @@ img.thumbnail
     .navbar-item
         display: flex
         align-items: center
-        padding: 1.25rem 0.75rem
+        padding: 1rem 0.75rem
         &.is-active
             color: hsl(217, 71%, 53%)
             background-color: transparent
+    .navbar-dropdown .navbar-item
+        padding: 0.5rem 0.75rem;
     @media screen and (max-width: screen-desktop - 1)
         .navbar-burger
             align-items: stretch

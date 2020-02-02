@@ -1,4 +1,4 @@
-<nav class="navbar navbar-main <%- get_config('navbar.sticky', false) ? 'is-fixed-top' : '' %>" role="navigation" aria-label="main navigation">
+<nav class="navbar navbar-main <%- get_config('navbar.sticky', false) ? 'is-fixed-top' : '' %>" role="navigation" aria-label="dropdown navigation">
     <div class="container">
         <div class="navbar-brand is-flex-center">
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarContent">
@@ -29,8 +29,18 @@
             <% if (Object.keys(menus).length) { %>
             <div class="navbar-start">
                 <% for (let i in menus) { let menu = menus[i]; %>
-                    <a class="navbar-item<% if (actives[i]) { %> is-active<% } %>"
-                       href="<%- url_for(menu) %>"><%= i %></a>
+                    <% if (typeof menu === 'string') { %> 
+                        <a class="navbar-item<% if (is_same_link(menu, page.path)) { %> is-active<% } %>" href="<%- url_for(menu) %>"><%= i %></a>
+                    <% } else { %> 
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a class="navbar-link"><%= i %></a>
+                            <div class="navbar-dropdown is-boxed">
+                                <% for (let j in menu) { let submenu = menu[j]; %>
+                                    <a class="navbar-item<% if (is_same_link(submenu, page.path)) { %> is-active<% } %>" href="<%- url_for(submenu) %>"><%= j %></a>
+                                <% } %> 
+                            </div>
+                        </div>
+                    <% } %> 
                 <% } %>
             </div>
             <% } %>

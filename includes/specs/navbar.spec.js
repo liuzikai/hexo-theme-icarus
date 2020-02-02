@@ -14,7 +14,7 @@ module.exports = {
             About: '/about'
         },
         '*': {
-            [type]: 'string',
+            [type]: ['string', 'object'],
             [doc]: 'Path or URL to the menu item'
         }
     },
