@@ -37,6 +37,8 @@ navbar:
         # Download on GitHub:
         #     icon: fab fa-github
         #     url: 'https://github.com/ppoffice/hexo-theme-icarus'
+    # Sticky on the top
+    sticky: true
 # Footer section link settings
 footer:
     # Links to be shown on the right of the footer section
@@ -114,12 +116,20 @@ sidebar:
     left:
         # Whether the left sidebar is sticky when page scrolls
         # https://ppoffice.github.io/hexo-theme-icarus/Configuration/Theme/make-a-sidebar-sticky-when-page-scrolls/
-        sticky: true
+        sticky: false
+        # Sticky only on pages, not posts
+        sticky_page_only: true
+        # Hide in posts
+        hide_in_post: false
     # right sidebar settings
     right:
         # Whether the right sidebar is sticky when page scrolls
         # https://ppoffice.github.io/hexo-theme-icarus/Configuration/Theme/make-a-sidebar-sticky-when-page-scrolls/
-        sticky: true
+        sticky: false
+        # Sticky only on pages, not posts
+        sticky_page_only: true
+        # Hide in posts
+        hide_in_post: true
 # Sidebar widget settings
 # https://ppoffice.github.io/hexo-theme-icarus/categories/Widgets/
 widgets:
@@ -172,11 +182,15 @@ widgets:
             提问的智慧: 'https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md'
             My LaTeX Engine: 'https://www.galacticcontender.com/latex.php'
             My Pixiv Collection: 'https://www.galacticcontender.com/pixiv_collection'
+        # Hide in post
+        hide_in_post: true
     -
         # Widget name
         type: category
         # Where should the widget be placed, left or right
         position: left
+        # Hide in post
+        hide_in_post: true
     # -
     #     # Widget name
     #     type: tagcloud
@@ -187,8 +201,8 @@ widgets:
         type: recent_posts
         # Where should the widget be placed, left or right
         position: right
-        # Hide in post or page
-        hide_in_article: true
+        # Hide in post
+        hide_in_post: true
     # -
     #     # Widget name
     #     type: archive
@@ -199,13 +213,15 @@ widgets:
         type: tag
         # Where should the widget be placed, left or right
         position: right
-        # Hide in post or page
-        hide_in_article: true
+        # Hide in post
+        hide_in_post: true
     -
         # Widget name
         type: toc
         # Where should the widget be placed, left or right
-        position: right
+        position: left
+        # Sticky (if enabled, the column where it was placed can't be sticky at the same time)
+        sticky: true
 # Other plugin settings
 plugins:
     # Enable page animations

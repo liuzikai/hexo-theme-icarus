@@ -3,7 +3,7 @@
 <head>
     <%- _partial('common/head') %>
 </head>
-<body class="is-<%= column_count() %>-column has-navbar-fixed-top">
+<body class="is-<%= column_count() %>-column">
     <%- _partial('common/navbar') %>
     <section class="section">
         <div class="container">
@@ -28,16 +28,16 @@
                 <% } else { %>
                     <!-- Normal Page -->
                     <% column = column_count(); %>
-                    <% if (!page.no_left_widget) { %>
+                    <% if ((page.layout == 'post' && get_config('sidebar.left.hide_in_post', false)) || page.no_left_widget) { %>
+                        <% if (has_column('left')) column--; %>
+                    <% } else { %>
                         <%- _partial('common/widget', { position: 'left' }) %>
-                    <% } else { 
-                        if (has_column('left')) column--;
-                    } %>
-                    <% if (!page.no_right_widget) { %>
+                    <% } %>
+                    <% if ((page.layout == 'post' && get_config('sidebar.right.hide_in_post', false)) || page.no_right_widget) { %>
+                        <% if (has_column('right')) column--; %>
+                    <% } else {  %>
                         <%- _partial('common/widget', { position: 'right' }) %>
-                    <% } else { 
-                        if (has_column('right')) column--;
-                    } %>
+                    <% } %>
                     <div class="column <%= main_column_class(column) %> has-order-2 column-main"><%- body %></div>
                 <% } %>
             </div>

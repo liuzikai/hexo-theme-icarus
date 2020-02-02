@@ -40,11 +40,12 @@ body, button, input, select, textarea
     .column-left,
     .column-right,
     .column-right-shadow
+    .widget
         &.is-sticky
             align-self: flex-start
             position: -webkit-sticky
             position: sticky
-            top: 4.75rem
+            top: 5.5rem
     .column-right-shadow
         &.is-sticky
             top: 1.5rem
@@ -79,7 +80,7 @@ img.thumbnail
 
 .navbar-main
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05)
-    .navbar-menu,
+    .navbar-menu.is-active,
     .navbar-start,
     .navbar-end
         align-items: stretch
@@ -104,6 +105,15 @@ img.thumbnail
             color: hsl(217, 71%, 53%)
             background-color: transparent
     @media screen and (max-width: screen-desktop - 1)
+        .navbar-burger
+            align-items: stretch
+            display: flex  
+            margin-top: 0.5rem  // center it
+            flex-shrink: 0
+            margin-left: 0
+            margin-right: auto  // override config to put it to left
+        .navbar-right-space
+            margin-left: auto
         .navbar-menu
             justify-content: center
             box-shadow: none
