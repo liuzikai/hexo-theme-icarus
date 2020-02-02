@@ -27,7 +27,7 @@
             <%- _partial('widget/' + widget.type, { widget }) %>
         <% } %>
     <% }) %>
-    <% if (position === 'left') { %>
+    <% if (position === 'left' && get_config('sidebar.left.shadow_right', false)) { %>
         <div class="column-right-shadow is-hidden-widescreen <%= sticky_class('right') %>">
         <% get_widgets('right').forEach(widget => {%>
             <% if (page.layout != 'post' || !widget.hide_in_post) { %>

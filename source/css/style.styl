@@ -45,10 +45,19 @@ body, button, input, select, textarea
             align-self: flex-start
             position: -webkit-sticky
             position: sticky
-            top: 5.5rem
+            top: 0.75rem
     .column-right-shadow
         &.is-sticky
             top: 1.5rem
+
+    .has-navbar-fixed-top
+        .column-main,
+        .column-left,
+        .column-right,
+        .column-right-shadow
+        .widget
+            &.is-sticky
+                top: 5.5rem
 
 .tag
     &.is-grey

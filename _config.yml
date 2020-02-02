@@ -121,6 +121,9 @@ sidebar:
         sticky_page_only: true
         # Hide in posts
         hide_in_post: false
+        # When the viewport size is not wide enough, move right sidebar to the buttom of left. 
+        # If false, right sidebar will simply be hidden.
+        shadow_right: false
     # right sidebar settings
     right:
         # Whether the right sidebar is sticky when page scrolls

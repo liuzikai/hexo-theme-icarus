@@ -3,7 +3,7 @@
 <head>
     <%- _partial('common/head') %>
 </head>
-<body class="is-<%= column_count() %>-column">
+<body class="is-<%= column_count() %>-column <%- get_config('navbar.sticky', false) ? 'has-navbar-fixed-top' : '' %>">
     <%- _partial('common/navbar') %>
     <section class="section">
         <div class="container">
