@@ -34,7 +34,7 @@ navbar:
         # About: /about
         My:
             My Pixiv Collection: 'https://www.galacticcontender.com/pixiv_collection'
-            My LaTeX Engine: 'https://www.galacticcontender.com/latex.php'
+            My LaTeX Engine: 'https://www.galacticcontender.com/latex_engine'
     # Navigation bar links to be shown on the right
     links:
         # Download on GitHub:
@@ -186,7 +186,7 @@ widgets:
         # Links to be shown in the links widget
         links:
             提问的智慧: 'https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md'
-            My LaTeX Engine: 'https://www.galacticcontender.com/latex.php'
+            My LaTeX Engine: 'https://www.galacticcontender.com/latex_engine'
             My Pixiv Collection: 'https://www.galacticcontender.com/pixiv_collection'
         # Hide in post
         hide_in_post: true
