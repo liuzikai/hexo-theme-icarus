@@ -2,7 +2,7 @@
     let result = '';
     if (toc.hasOwnProperty('id') && toc.hasOwnProperty('index') && toc.hasOwnProperty('text')) {
         result += `<li>
-        <a class="is-flex" href="#${toc.id}">
+        <a class="is-flex" id="toc-item-${toc.id}" href="#${toc.id}">
         <span class="has-mr-6">${toc.index}</span>
         <span>${toc.text}</span>
         </a>`;
@@ -36,4 +36,4 @@
         </div>
     </div>
 <% } %>
-<!-- <%- _js('js/toc', true) %> -->
+<%- _js('js/toc', true) %>
