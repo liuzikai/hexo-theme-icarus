@@ -7,6 +7,7 @@
 <% } else { %>
 <div id="comment-container"></div>
 <%- _css(cdn('gitalk', '1.4.1', 'dist/gitalk.css')) %>
+<!-- https://github.com/gitalk/gitalk/pull/344  -->
 <%- _js('js/gitalk.min.js') %>
 <script>
     var gitalk = new Gitalk({

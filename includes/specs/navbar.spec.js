@@ -27,5 +27,10 @@ module.exports = {
                 url: 'https://github.com/ppoffice/hexo-theme-icarus'
             }
         }
+    },
+    sticky: {
+        [type]: 'boolean',
+        [doc]: 'Navigation bar sticky on the top',
+        [defaultValue]: true
     }
 };

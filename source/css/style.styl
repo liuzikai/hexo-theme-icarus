@@ -118,7 +118,7 @@ img.thumbnail
     @media screen and (max-width: screen-desktop - 1)
         .navbar-burger
             align-items: stretch
-            display: flex  
+            display: flex
             margin-top: 0.5rem  // center it
             flex-shrink: 0
             margin-left: 0
@@ -499,3 +499,13 @@ figure.highlight
  * --------------------------------- */
  .menu-list .is-current
     color: hsl(217, 71%, 53%)
+
+/* ---------------------------------
+ *        ToC Link Position Fix
+ * --------------------------------- */
+:target::before {
+  content: "";
+  display: block;
+  height: 5.25rem;
+  margin: -5.25rem 0 0;
+}

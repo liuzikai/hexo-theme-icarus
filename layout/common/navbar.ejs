@@ -29,18 +29,18 @@
             <% if (Object.keys(menus).length) { %>
             <div class="navbar-start">
                 <% for (let i in menus) { let menu = menus[i]; %>
-                    <% if (typeof menu === 'string') { %> 
+                    <% if (typeof menu === 'string') { %>
                         <a class="navbar-item<% if (is_same_link(menu, page.path)) { %> is-active<% } %>" href="<%- url_for(menu) %>"><%= i %></a>
-                    <% } else { %> 
+                    <% } else { %>
                         <div class="navbar-item has-dropdown is-hoverable">
                             <a class="navbar-link"><%= i %></a>
                             <div class="navbar-dropdown is-boxed">
                                 <% for (let j in menu) { let submenu = menu[j]; %>
                                     <a class="navbar-item<% if (is_same_link(submenu, page.path)) { %> is-active<% } %>" href="<%- url_for(submenu) %>"><%= j %></a>
-                                <% } %> 
+                                <% } %>
                             </div>
                         </div>
-                    <% } %> 
+                    <% } %>
                 <% } %>
             </div>
             <% } %>
@@ -92,5 +92,5 @@ if ($navbarBurgers.length > 0) {
   });
 }
 
-}); 
+});
 </script>
